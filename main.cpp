@@ -2,23 +2,33 @@
 using namespace std;
 
 
-int main() {
-  
-long value1{200000};
-long value2{0};
-long* longPtr;
-  
-longPtr = &value1;
+ int fun( int a )
 
-cout << "value pointed to by LongPtr: " << longPtr<<endl; 
+ { 
+      int b = a * 2;
+      return b;
+  }
 
 
-value2 = *longPtr; 
-  
-cout << "The value of 2 is: " << value2 <<endl;
 
-cout << "The address of value1 is: " << &value1<<endl; 
+  int main()
 
-  cout << "This is the address stored in longPtr: " << longPtr <<endl;
-  
-}
+  {
+
+      int y = 5;
+
+
+
+      cout << fun(y) << endl;
+
+      cout << fun(-- y) << endl;
+
+      cout << fun(y--) << endl;
+
+      cout << y <<endl;
+
+
+
+      return 0;
+
+  }
