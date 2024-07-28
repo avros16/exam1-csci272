@@ -1,39 +1,31 @@
- # include <iostream>
- using namespace std;
+#include <iostream>
+using namespace std;
 
-double lowest(double* num, int size){
-double lowNum= num[0];
-
-  
-for (int i{1}; i< size; i++){
-
-  if (num[i] < lowNum) {
-    
-    lowNum=num[i];
-  }
-  
-}
-  
-  return lowNum;
+void rotate1(int* a, int* b, int* c) {
+    int temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = temp;
 }
 
+void rotate2(int& a, int& b, int& c) {
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
+}
 
+int main() {
+    int a = 1, b = 2, c = 3;
 
-   int main() {
+    cout << "Initial values: a = " << a << ", b = " << b << ", c = " << c << endl;
 
- const int size{10};
- double num[size];
+    rotate1(&a, &b, &c);
+    cout << "After rotate1: a = " << a << ", b = " << b << ", c = " << c << endl;
 
+    a = 1, b = 2, c = 3;
+    rotate2(a, b, c);
+    cout << "After rotate2: a = " << a << ", b = " << b << ", c = " << c << endl;
 
-
-     cout << "Enter ten double-precision floating-point numbers:" << endl;
-     for (int i = 0; i < size; ++i) {
-         cin >> num[i];
-     }
-     
-    double lowestNum = lowest(num, size);
-
-     cout << "The lowest number is: " << lowestNum << endl;
-     return 0;
-
+    return 0;
 }
